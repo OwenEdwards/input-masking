@@ -185,6 +185,15 @@ var inputMask = {
       }
       return value;
     }
+
+    //convert to days
+    if (l == 4 && placeholder.toUpperCase().substr(2,3) == '/DD') {
+      if(value.substr(3,1) > "3" && value.substr(3,1) <= "9") {
+        value = value.substr(0,3) + '0' + value.substr(3,1);
+      }
+      return value;
+    }
+
     // test the value, removing the last character, until what you have is a submatch
     for ( i = l; i >= 0; i--) {
       testValue = value + validExample.substr(value.length);
@@ -213,4 +222,3 @@ for ( var property in inputMask ) {
     new InputMask();
   }
 })();
-

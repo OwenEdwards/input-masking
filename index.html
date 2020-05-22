@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
 <head>
-  <title>Masking</title>
+  <title>Masked Inputs for DOB, and SSN</title>
   <link rel="stylesheet" href="css/masking-input.css"/>
   <style>
   /* additional styles */
@@ -13,12 +13,10 @@
 </head>
 <body>
 
-<ul>
-  <li>
-    <label for="expiration">Credit Card Expiration Month</label>
-    <input id="expiration" type="tel" placeholder="MM/YY" class="masked" pattern="(1[0-2]|0[1-9])\/\d\d" data-valid-example="11/18" title="2-digit month and 2-digit year greater than 01/15">
-  </li>
+  <h1>Masked Inputs for DOB, and SSN</h1>
 
+<ul>
+  <!--
 <li>
   <label for="zip">Zip Code</label>
   <input id="zip" type="tel" name="zipcode" placeholder="XXXXX" pattern="\d{5}" class="masked" title="5-digit zip code">
@@ -34,6 +32,15 @@
 <li>
   <label for="cc">Credit Card Number</label>
   <input id="cc" type="tel" name="ccnumber" placeholder="XXXX XXXX XXXX XXXX" pattern="\d{4} \d{4} \d{4} \d{4}" class="masked" title="16-digit number">
+</li>
+-->
+<li>
+  <label for="dob">Date of Birth</label>
+  <input id="dob" type="tel" placeholder="MM/DD/YYYY" class="masked" pattern="(1[0-2]|0[1-9])\/(3[0-1]|[0-2]\d)\/(1|2)(0|9)\d\d" data-valid-example="11/21/1974" title="2-digit month, 2-digit day, and 4-digit year between 01/01/1900 and 12/31/2099">
+</li>
+<li>
+  <label for="ssn">SSN</label>
+  <input id="ssn" type="password" name="ssnumber" placeholder="XXX-XX-XXXX" pattern="\d{3}-\d{2}-\d{4}" class="masked" title="9 digit Social Security Number">
 </li>
 </ul>
 
