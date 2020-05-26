@@ -194,6 +194,14 @@ var inputMask = {
       return value;
     }
 
+    //convert to years (3 - 9 as the first digit becomes 19y)
+    if (l == 7 && placeholder.toUpperCase().substr(5,5) == '/YYYY') {
+      if(value.substr(6,1) > "2" && value.substr(6,1) <= "9") {
+        value = value.substr(0,6) + '19' + value.substr(6,1);
+      }
+      return value;
+    }
+
     // test the value, removing the last character, until what you have is a submatch
     for ( i = l; i >= 0; i--) {
       testValue = value + validExample.substr(value.length);
