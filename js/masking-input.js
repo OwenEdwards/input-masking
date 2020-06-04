@@ -163,6 +163,11 @@ var inputMask = {
         }
         // break if no characters left and the pattern is non-special character
         if (strippedValue[j] == undefined) {
+          // If the last character of the value matches the placeholder, add it.
+          i++;
+          if ((value.length > i) && (value[i] == placeholder[i])){
+            newValue += placeholder[i];
+          }
           break;
         }
     }
